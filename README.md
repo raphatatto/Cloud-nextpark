@@ -91,25 +91,30 @@ docker run -d -p 8080:80 --name nextpark-api rm554983/nextpark-api:latest
 ## 🐳 Dockerfile
 
 ```dockerfile
+
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY . .
+
+
+COPY *.csproj ./
 RUN dotnet restore
+
+
+COPY . ./
 RUN dotnet publish -c Release -o /app/publish
+
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "NextParkAPI.dll"]
+
 ```
 
 ---
 
-
-## 👨‍💻 Integrantes
+## 👥 Integrantes
 
 - Raphaela Oliveira Tatto – RM: *554983*
 - Tiago Ribeiro Capela – RM: *558021*
 
-	
----
