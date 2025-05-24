@@ -118,3 +118,9 @@ ENTRYPOINT ["dotnet", "NextParkAPI.dll"]
 - Raphaela Oliveira Tatto – RM: *554983*
 - Tiago Ribeiro Capela – RM: *558021*
 
+---
+
+# link do video 
+https://youtu.be/z1AXUV2reqQ
+
+
